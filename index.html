@@ -18,7 +18,7 @@
             overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
-        /* Full-Screen Video */
+        /* Full-Screen Video Container */
         .background-video {
             position: fixed;
             top: 0;
@@ -27,21 +27,27 @@
             height: 100%;
             z-index: -1;
             overflow: hidden;
+            background-color: black;
         }
 
+        /* Full-Screen Video */
         #background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: contain;
+            background-color: black; /* Black bars if needed */
         }
 
-        /* Welcome Section with Video */
+        /* Welcome Section */
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
             padding: 60px 20px;
             text-align: center;
-            height: 100vh; /* Full screen */
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -58,93 +64,47 @@
             margin-bottom: 10px;
         }
 
-        /* Store Info Section */
-        .store-info {
+        /* Section Styling */
+        .store-info,
+        .store-images,
+        .hours-policy,
+        .location-info,
+        .contact-info {
             padding: 40px;
             text-align: center;
-            background-image: url('images/bkg.jpg'); /* Set the background image here */
+            background-image: url('images/bkg.jpg');
             background-size: cover;
             background-position: center;
         }
 
-        .store-info h2 {
-            margin-bottom: 20px;
+        .store-info h2,
+        .location-info h2,
+        .contact-info h2 {
             font-size: 28px;
+            margin-bottom: 20px;
         }
 
-        .store-info p, .store-info ul {
+        .store-info p,
+        .location-info p,
+        .contact-info p,
+        .hours-policy p {
             font-size: 18px;
         }
 
-        /* Store Images Section */
-        .store-images {
-            padding: 40px;
-            text-align: center;
-            background-image: url('images/bkg.jpg'); /* Background image for this section */
-            background-size: cover;
-            background-position: center;
-        }
-
+        /* Image Gallery */
         .image-gallery img {
             max-width: 45%;
             margin: 10px;
             border-radius: 8px;
         }
 
-        /* Store Hours & Refund Policy Section */
-        .hours-policy {
-            background-image: url('images/bkg.jpg'); /* Set background image for the policy section */
-            padding: 30px;
-            text-align: center;
-            background-size: cover;
-            background-position: center;
-        }
-
+        /* Hours & Policy */
         .hours-policy h2 {
             font-size: 24px;
             margin-bottom: 15px;
         }
 
-        .hours-policy p {
-            font-size: 18px;
-        }
-
-        /* Location Section */
-        .location-info {
-            padding: 40px;
-            background-image: url('images/bkg.jpg'); /* Set background image for the location section */
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-        }
-
-        .location-info h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .location-info p {
-            font-size: 18px;
-        }
-
-        /* Contact Section */
-        .contact-info {
-            padding: 30px;
-            background-image: url('images/bkg.jpg'); /* Set background image for the contact section */
-            text-align: center;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .contact-info h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .contact-info p {
-            font-size: 18px;
-        }
-
+        /* Contact Links */
         .contact-info a {
             color: #333;
             text-decoration: none;
@@ -154,7 +114,7 @@
             text-decoration: underline;
         }
 
-        /* Footer Section */
+        /* Footer */
         footer {
             background-color: #333;
             color: white;
@@ -186,20 +146,20 @@
 </head>
 <body>
 
-    <!-- Background Video Section -->
+    <!-- Background Video -->
     <div class="background-video">
-        <video id="background-video" autoplay muted loop>
+        <video id="background-video" autoplay muted loop playsinline>
             <source src="images/store.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
 
-    <!-- Welcome Header Section -->
+    <!-- Welcome Section -->
     <header>
         <div class="hero-content">
             <h1>Welcome to RajShree Stores</h1>
             <p>Your trusted local department store in Arjundhara-08, Jhapa.</p>
-            <p>offering a wide range of daily essentials at affordable prices.</p>
+            <p>Offering a wide range of daily essentials at affordable prices.</p>
         </div>
     </header>
 
@@ -212,14 +172,14 @@
         <p>Our store is designed to offer a one-stop shopping experience, saving you time and effort by bringing everything you need under one roof.</p>
     </section>
 
-    <!-- Store Information Section -->
+    <!-- What We Offer -->
     <section class="store-info">
         <h2>What We Offer</h2>
-        <p>With a wide range of products available under one roof, we cater to all your daily needs. Our store is designed to provide customers with a hassle-free shopping experience, ensuring that you find everything you need in a timely manner at affordable prices.</p>
+        <p>With a wide range of products available under one roof, we cater to all your daily needs.</p>
         <p>We bring you essential daily household products, conveniently available at the best prices in the market. Make sure to visit us!</p>
     </section>
 
-    <!-- Store Images Section -->
+    <!-- Store Images -->
     <section class="store-images">
         <div class="image-gallery">
             <img src="images/store.jpg" alt="RajShree Store Front">
@@ -227,14 +187,14 @@
         </div>
     </section>
 
-    <!-- Store Hours and Refund Policy -->
+    <!-- Store Hours & Policy -->
     <section class="hours-policy">
         <h2>Store Information</h2>
         <p><strong>Opening Hours:</strong> Monday to Sunday - 6:30 AM to 8:30 PM</p>
         <p><strong>Return & Refund Policy:</strong> Unused items can be refunded within 3 days of purchase.</p>
     </section>
 
-    <!-- Location Section -->
+    <!-- Location Info -->
     <section class="location-info">
         <h2>Our Location</h2>
         <p><strong>Address:</strong> Arjundhara-08, Jhapa, near Pragati Secondary School and Sanischare Health Post.</p>
@@ -242,15 +202,15 @@
         <p><strong>Contact Numbers:</strong> 9844698898 | 9841302434</p>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Info -->
     <section class="contact-info">
         <h2>Contact Us</h2>
         <p>Phone: 9844698898 | 9841302434</p>
-        < <p><strong>Email:</strong> <a href="mailto:rajshreestores@gmail.com">rajshreestores@gmail.com</a></p>
+        <p><strong>Email:</strong> <a href="mailto:rajshreestores@gmail.com">rajshreestores@gmail.com</a></p>
         <p><strong>Location:</strong> RajShree Stores is located at Arjundhara-08, Jhapa, near Pragati Secondary School and Sanischare Health Post.</p>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 RajShree Stores. All Rights Reserved.</p>
     </footer>
