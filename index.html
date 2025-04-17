@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RajShree Stores</title>
     <style>
         /* Basic Reset */
@@ -15,42 +15,33 @@
         body, html {
             height: 100%;
             font-family: Arial, sans-serif;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
-        /* Full-Screen Video Container */
+        /* Full-Screen Video */
         .background-video {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             z-index: -1;
             overflow: hidden;
-            background-color: black;
         }
 
-        /* Full-Screen Video (Uncropped) */
         #background-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: auto;
-            height: auto;
-            max-width: 100vw;
-            max-height: 100vh;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            background-color: black;
         }
 
-        /* Welcome Section */
+        /* Welcome Section with Video */
         header {
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
             padding: 60px 20px;
             text-align: center;
-            height: 100vh;
+            height: 100vh; /* Full screen */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -67,47 +58,93 @@
             margin-bottom: 10px;
         }
 
-        /* Section Styling */
-        .store-info,
-        .store-images,
-        .hours-policy,
-        .location-info,
-        .contact-info {
+        /* Store Info Section */
+        .store-info {
             padding: 40px;
             text-align: center;
-            background-image: url('images/bkg.jpg');
+            background-image: url('images/bkg.jpg'); /* Set the background image here */
             background-size: cover;
             background-position: center;
         }
 
-        .store-info h2,
-        .location-info h2,
-        .contact-info h2 {
-            font-size: 28px;
+        .store-info h2 {
             margin-bottom: 20px;
+            font-size: 28px;
         }
 
-        .store-info p,
-        .location-info p,
-        .contact-info p,
-        .hours-policy p {
+        .store-info p, .store-info ul {
             font-size: 18px;
         }
 
-        /* Image Gallery */
+        /* Store Images Section */
+        .store-images {
+            padding: 40px;
+            text-align: center;
+            background-image: url('images/bkg.jpg'); /* Background image for this section */
+            background-size: cover;
+            background-position: center;
+        }
+
         .image-gallery img {
             max-width: 45%;
             margin: 10px;
             border-radius: 8px;
         }
 
-        /* Hours & Policy */
+        /* Store Hours & Refund Policy Section */
+        .hours-policy {
+            background-image: url('images/bkg.jpg'); /* Set background image for the policy section */
+            padding: 30px;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+
         .hours-policy h2 {
             font-size: 24px;
             margin-bottom: 15px;
         }
 
-        /* Contact Links */
+        .hours-policy p {
+            font-size: 18px;
+        }
+
+        /* Location Section */
+        .location-info {
+            padding: 40px;
+            background-image: url('images/bkg.jpg'); /* Set background image for the location section */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .location-info h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .location-info p {
+            font-size: 18px;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            padding: 30px;
+            background-image: url('images/bkg.jpg'); /* Set background image for the contact section */
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+        }
+
         .contact-info a {
             color: #333;
             text-decoration: none;
@@ -117,7 +154,7 @@
             text-decoration: underline;
         }
 
-        /* Footer */
+        /* Footer Section */
         footer {
             background-color: #333;
             color: white;
@@ -149,20 +186,20 @@
 </head>
 <body>
 
-    <!-- Background Video -->
+    <!-- Background Video Section -->
     <div class="background-video">
-        <video id="background-video" autoplay muted loop playsinline>
+        <video id="background-video" autoplay muted loop>
             <source src="images/store.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
 
-    <!-- Welcome Section -->
+    <!-- Welcome Header Section -->
     <header>
         <div class="hero-content">
             <h1>Welcome to RajShree Stores</h1>
             <p>Your trusted local department store in Arjundhara-08, Jhapa.</p>
-            <p>Offering a wide range of daily essentials at affordable prices.</p>
+            <p>offering a wide range of daily essentials at affordable prices.</p>
         </div>
     </header>
 
@@ -175,14 +212,14 @@
         <p>Our store is designed to offer a one-stop shopping experience, saving you time and effort by bringing everything you need under one roof.</p>
     </section>
 
-    <!-- What We Offer -->
+    <!-- Store Information Section -->
     <section class="store-info">
         <h2>What We Offer</h2>
-        <p>With a wide range of products available under one roof, we cater to all your daily needs.</p>
+        <p>With a wide range of products available under one roof, we cater to all your daily needs. Our store is designed to provide customers with a hassle-free shopping experience, ensuring that you find everything you need in a timely manner at affordable prices.</p>
         <p>We bring you essential daily household products, conveniently available at the best prices in the market. Make sure to visit us!</p>
     </section>
 
-    <!-- Store Images -->
+    <!-- Store Images Section -->
     <section class="store-images">
         <div class="image-gallery">
             <img src="images/store.jpg" alt="RajShree Store Front">
@@ -190,14 +227,14 @@
         </div>
     </section>
 
-    <!-- Store Hours & Policy -->
+    <!-- Store Hours and Refund Policy -->
     <section class="hours-policy">
         <h2>Store Information</h2>
         <p><strong>Opening Hours:</strong> Monday to Sunday - 6:30 AM to 8:30 PM</p>
         <p><strong>Return & Refund Policy:</strong> Unused items can be refunded within 3 days of purchase.</p>
     </section>
 
-    <!-- Location Info -->
+    <!-- Location Section -->
     <section class="location-info">
         <h2>Our Location</h2>
         <p><strong>Address:</strong> Arjundhara-08, Jhapa, near Pragati Secondary School and Sanischare Health Post.</p>
@@ -205,18 +242,20 @@
         <p><strong>Contact Numbers:</strong> 9844698898 | 9841302434</p>
     </section>
 
-    <!-- Contact Info -->
+    <!-- Contact Section -->
     <section class="contact-info">
         <h2>Contact Us</h2>
         <p>Phone: 9844698898 | 9841302434</p>
-        <p><strong>Email:</strong> <a href="mailto:rajshreestores@gmail.com">rajshreestores@gmail.com</a></p>
+        < <p><strong>Email:</strong> <a href="mailto:rajshreestores@gmail.com">rajshreestores@gmail.com</a></p>
         <p><strong>Location:</strong> RajShree Stores is located at Arjundhara-08, Jhapa, near Pragati Secondary School and Sanischare Health Post.</p>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 RajShree Stores. All Rights Reserved.</p>
     </footer>
 
 </body>
 </html>
+In this code the video is like zoomed please fix that and set full video to background
+
