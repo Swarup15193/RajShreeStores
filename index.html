@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RajShree Stores</title>
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -13,45 +12,44 @@
     }
 
     html, body {
-      height: 100%;
       font-family: Arial, sans-serif;
       overflow-x: hidden;
+      background-color: #f4f4f4;
     }
 
-    /* Background Video */
-    .background-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background-color: black; /* fallback background */
-    }
-
-    .background-video video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* No zoom or crop */
-      background-color: black;
-    }
-
-    /* Header Section */
+    /* Header Section with video background */
     header {
+      position: relative;
       height: 100vh;
-      background-color: rgba(0, 0, 0, 0.5);
+      overflow: hidden;
       color: white;
+      text-align: center;
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
       flex-direction: column;
-      padding: 0 20px;
+    }
+
+    .background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .background-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-content {
+      padding: 20px;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.5);
     }
 
     .hero-content h1 {
@@ -61,8 +59,8 @@
 
     .hero-content p {
       font-size: 1.2rem;
-      margin-bottom: 10px;
       max-width: 700px;
+      margin: 0 auto 10px auto;
     }
 
     section {
@@ -82,24 +80,28 @@
       line-height: 1.6;
     }
 
+    .store-info,
+    .hours-policy,
+    .location-info,
+    .contact-info,
     .store-images {
       background-image: url('images/bkg.jpg');
       background-size: cover;
       background-position: center;
+      color: #fff;
+    }
+
+    .image-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     .image-gallery img {
       width: 45%;
       max-width: 400px;
-      margin: 10px;
       border-radius: 8px;
-    }
-
-    .hours-policy, .location-info, .contact-info, .store-info {
-      background-image: url('images/bkg.jpg');
-      background-size: cover;
-      background-position: center;
-      color: #fff;
     }
 
     .contact-info a {
@@ -132,16 +134,14 @@
 </head>
 <body>
 
-  <!-- Background Video -->
-  <div class="background-video">
-    <video autoplay muted loop playsinline>
-      <source src="images/store.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-  <!-- Header -->
+  <!-- Header with video -->
   <header>
+    <div class="background-video">
+      <video autoplay muted loop playsinline>
+        <source src="images/store.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
     <div class="hero-content">
       <h1>Welcome to RajShree Stores</h1>
       <p>Your trusted local department store in Arjundhara-08, Jhapa.</p>
@@ -157,7 +157,7 @@
     <p>Our store is designed to offer a one-stop shopping experience, saving you time and effort by bringing everything you need under one roof.</p>
   </section>
 
-  <!-- Offerings -->
+  <!-- What We Offer -->
   <section class="store-info">
     <h2>What We Offer</h2>
     <p>With a wide range of products under one roof, we cater to all your daily needs.</p>
@@ -173,7 +173,7 @@
     </div>
   </section>
 
-  <!-- Hours and Refund Policy -->
+  <!-- Store Hours and Refund Policy -->
   <section class="hours-policy">
     <h2>Store Information</h2>
     <p><strong>Opening Hours:</strong> Monday to Sunday - 6:30 AM to 8:30 PM</p>
